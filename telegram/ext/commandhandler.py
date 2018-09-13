@@ -145,7 +145,7 @@ class CommandHandler(Handler):
                 else:
                     res = self.filters(message)
 
-                return res and (command[0].lower() in self.command
+                return res and (command[0].lower().encode("utf8") in self.command
                                 and command[1].lower() == message.bot.username.lower())
             else:
                 return False
